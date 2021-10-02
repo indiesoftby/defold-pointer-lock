@@ -1,0 +1,63 @@
+local cursor = require("pointer_lock.cursor")
+
+local function clamp(value, min, max)
+    if value < min then
+        value = min
+    elseif value > max then
+        value = max
+    end
+    return value
+end
+
+local function set_alpha(node, alpha)
+    local color = gui.get_color(node)
+    color.w = alpha
+    gui.set_color(node, color)
+    if alpha <= 0 then
+        gui.set_enabled(node, false)
+    else
+        gui.set_enabled(node, true)
+    end
+end
+
+function init(self)
+    gui.set_render_order(15)
+
+    self.cursor_node = gui.get_node("cursor")
+    self.cursor_img = gui.get_node("cursor_img")
+end
+
+function final(self)
+end
+
+function update(self, dt)
+    gui.set_position(self.cursor_node, vmath.vector3(cursor.cursor_x, cursor.cursor_y, 0))
+
+    local cursor_alpha = (cursor.cursor_on and 1 or 0) * (cursor.pointer_locked and 1 or 0.5)
+    set_alpha(self.cursor_node, cursor_alpha)
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("cursor_scale") then
+        assert(message.scale)
+
+        gui.set_scale(self.cursor_img, message.scale)
+    end
+end
+
+function on_input(self, action_id, action)
+    -- NOTE: input should be acquired by the developer
+
+    if action_id == nil then
+        if cursor.pointer_locked and cursor.cursor_on then
+            local x = cursor.cursor_x
+            local y = cursor.cursor_y
+
+            x = clamp(x + action.dx, 0, cursor.DISPLAY_WIDTH)
+            y = clamp(y + action.dy, 0, cursor.DISPLAY_HEIGHT)
+
+            cursor.cursor_x = x
+            cursor.cursor_y = y
+        end
+    end
+end

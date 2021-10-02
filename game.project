@@ -1,0 +1,36 @@
+[bootstrap]
+main_collection = /example/main.collectionc
+
+[script]
+shared_state = 1
+
+[display]
+width = 1280
+height = 720
+high_dpi = 1
+
+[android]
+input_method = HiddenInputField
+
+[project]
+title = pointer_lock_example
+developer = Indiesoft LLC
+version = 1.0.0
+
+[render]
+clear_color_alpha = 1.0
+clear_color_red = 0.9
+clear_color_green = 0.9
+clear_color_blue = 0.9
+
+[physics]
+type = 3D
+scale = 0.01
+gravity_y = 0.0
+
+[html5]
+scale_mode = stretch
+
+[input]
+game_binding = /builtins/input/all.input_bindingc
+

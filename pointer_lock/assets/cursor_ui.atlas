@@ -1,0 +1,11 @@
+images {
+  image: "/pointer_lock/assets/cursor.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/pointer_lock/assets/empty.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 2

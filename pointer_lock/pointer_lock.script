@@ -1,0 +1,63 @@
+local cursor = require("pointer_lock.cursor")
+
+go.property("acquire_input_focus", true)
+go.property("click_action_id", hash("touch"))
+
+function init(self)
+    if self.acquire_input_focus then
+        msg.post(".", "acquire_input_focus")
+    end
+
+    cursor.pointer_locked = false
+    pointer_lock.glfw_mouse_unlock()
+
+    if html5 then
+        pointer_lock.html5_on_click(function()
+            print("on_click")
+            if not cursor.pointer_locked then
+                pointer_lock.html5_request_pointer_lock()
+            end
+        end)
+    end
+end
+
+function final(self)
+    cursor.pointer_locked = false
+    pointer_lock.glfw_mouse_unlock()
+
+    if html5 then
+        pointer_lock.html5_on_click(nil)
+    end
+end
+
+function update(self, dt)
+    if html5 then
+        local locked = pointer_lock.html5_pointer_locked()
+        if locked ~= cursor.pointer_locked then
+            print("html5_pointer_locked, new state - locked = ", locked)
+        end
+        cursor.pointer_locked = locked
+    end
+end
+
+function on_message(self, message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+    -- print("on_input", action_id, "pressed", action.pressed, "released", action.released, "dx-dy", action.dx, action.dy, "x-y", action.x, action.y)
+
+    if not html5 and action_id == hash("key_esc") and action.released then
+        local skip_events = cursor.pointer_locked
+        cursor.pointer_locked = false
+        pointer_lock.glfw_mouse_unlock()
+
+        return skip_events
+    elseif not html5 and action_id == self.click_action_id and action.released then
+        if not cursor.pointer_locked then
+            cursor.pointer_locked = true
+            pointer_lock.glfw_mouse_lock()
+
+            return true
+        end
+    end
+end
