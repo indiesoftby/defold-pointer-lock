@@ -13,7 +13,7 @@ function init(self)
 
     if html5 then
         pointer_lock.html5_on_click(function()
-            print("on_click")
+            -- print("on_click")
             if not cursor.pointer_locked then
                 pointer_lock.html5_request_pointer_lock()
             end
@@ -33,9 +33,9 @@ end
 function update(self, dt)
     if html5 then
         local locked = pointer_lock.html5_pointer_locked()
-        if locked ~= cursor.pointer_locked then
-            print("html5_pointer_locked, new state - locked = ", locked)
-        end
+        -- if locked ~= cursor.pointer_locked then
+        --     print("html5_pointer_locked, new state - locked = ", locked)
+        -- end
         cursor.pointer_locked = locked
     end
 end
