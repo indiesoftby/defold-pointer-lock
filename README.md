@@ -12,8 +12,10 @@ Pointer Lock simplifies mouse locking to access mouse events even when the curso
 
 | Platform | Status |
 | ---------| -------|
-| Desktop (Windows, macOS, Linux) | Supported ✅ |
-| Browser (HTML5) | Supported ✅ (Desktop-only) |
+| Browser (HTML5) | Supported ✅ (Desktop-only!) |
+| macOS | Not Tested ℹ️ |
+| Linux | Not Tested ℹ️ |
+| Windows | Supported ✅ |
 
 ## Installation & Usage
 
