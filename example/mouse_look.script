@@ -1,0 +1,53 @@
+local cursor = require("pointer_lock.cursor")
+
+local function update_sensitivity(self)
+    self.look_speed = lume.lerp(0.025, 0.275, cursor.pointer_sens / app_state.MOUSE_SENS_MAX)
+end
+
+local function set_eulers(self)
+    app_render.update_camera(scene_state.t.yaw, scene_state.t.pitch)
+
+    go.set(".", "euler.y", -(90 + scene_state.t.yaw))
+    go.set(".", "euler.x", scene_state.t.pitch)
+end
+
+function init(self)
+    update_sensitivity(self)
+end
+
+function final(self)
+end
+
+function update(self, dt)
+    update_sensitivity(self)
+    set_eulers(self)
+end
+
+function on_message(self, message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+    if action_id == nil then
+        if cursor.pointer_locked and not cursor.cursor_on then
+
+            if not self.skip_first_dxdy then
+                -- only for Desktop OS
+                s.yaw = s.yaw - (self.look_speed * -action.dx)
+                s.pitch = s.pitch - (self.look_speed * -action.dy)
+            end
+            self.skip_first_dxdy = false
+
+            if s.yaw < 0 then
+                s.yaw = s.yaw + 360
+            end
+            if s.yaw >= 360 then
+                s.yaw = s.yaw - 360
+            end
+
+            s.pitch = math.max(s.pitch, -89)
+            s.pitch = math.min(s.pitch, 89)
+
+            set_eulers(self)
+        end
+    end
+end

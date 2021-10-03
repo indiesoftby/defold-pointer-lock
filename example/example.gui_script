@@ -14,7 +14,7 @@ local function lerp(t, a, b)
     return a + (b - a) * clamp01(t)
 end
 
-local function set_alpha(node, alpha)
+local function set_alpha(node, alpha, has_outline, has_shadow)
     local color = gui.get_color(node)
     color.w = alpha
     gui.set_color(node, color)
@@ -22,6 +22,18 @@ local function set_alpha(node, alpha)
         gui.set_enabled(node, false)
     else
         gui.set_enabled(node, true)
+    end
+
+    if has_outline then
+        local outline = gui.get_outline(node)
+        outline.w = alpha
+        gui.set_outline(node, outline)
+    end
+
+    if has_shadow then
+        local shadow = gui.get_shadow(node)
+        shadow.w = alpha
+        gui.set_shadow(node, shadow)
     end
 end
 
@@ -37,7 +49,7 @@ end
 
 function update(self, dt)
     self.help_alpha = lerp(0.3, self.help_alpha, cursor.pointer_locked and 0 or 1)
-    set_alpha(self.help, self.help_alpha)
+    set_alpha(self.help, self.help_alpha, true, true)
 end
 
 function on_message(self, message_id, message, sender)

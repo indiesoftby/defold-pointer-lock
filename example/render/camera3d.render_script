@@ -1,0 +1,68 @@
+local camera3d = require("example.render.camera3d")
+
+function init(self)
+    self.gui_pred = render.predicate({"gui"})
+    self.model_pred = render.predicate({"model"})
+    self.tile_pred = render.predicate({"tile"})
+    self.text_pred = render.predicate({"text"})
+    self.particle_pred = render.predicate({"particle"})
+
+    self.clear_color = vmath.vector4(0, 0, 0, 0)
+    self.clear_color.x = sys.get_config("render.clear_color_red", 0)
+    self.clear_color.y = sys.get_config("render.clear_color_green", 0)
+    self.clear_color.z = sys.get_config("render.clear_color_blue", 0)
+    self.clear_color.w = sys.get_config("render.clear_color_alpha", 1)
+end
+
+function update(self)
+    local window_width = render.get_window_width()
+    local window_height = render.get_window_height()
+
+    render.set_depth_mask(true)
+    render.set_stencil_mask(0xff)
+    render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color, [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})
+
+    render.set_viewport(window_width, window_height, window_width, window_height)
+    camera3d.update_display(window_width, window_height)
+
+    -- 3D
+    render.set_view(camera3d.camera_view())
+    render.set_projection(camera3d.camera_perspective())
+    render.set_depth_mask(true)
+    render.enable_state(render.STATE_DEPTH_TEST)
+    render.disable_state(render.STATE_STENCIL_TEST)
+    render.disable_state(render.STATE_BLEND)
+    render.enable_state(render.STATE_CULL_FACE)
+    render.set_blend_func(render.BLEND_ONE, render.BLEND_ONE_MINUS_SRC_ALPHA)
+    -- Opaque models & sprites
+    render.draw(self.model_pred)
+
+    -- Alpha-blended sprites
+    render.enable_state(render.STATE_BLEND)
+    render.disable_state(render.STATE_CULL_FACE)
+    render.set_depth_mask(false)
+    render.draw(self.tile_pred)
+    render.draw(self.particle_pred)
+    render.draw_debug3d()
+
+    -- Render UI
+    render.set_viewport(0, 0, window_width, window_height)
+    camera3d.update_display(window_width, window_height)
+
+    render.set_depth_mask(false)
+    render.disable_state(render.STATE_DEPTH_TEST)
+    render.enable_state(render.STATE_BLEND)
+    render.set_view(vmath.matrix4())
+    render.set_projection(vmath.matrix4_orthographic(0, window_width, 0, window_height, -1, 1))
+
+    render.enable_state(render.STATE_STENCIL_TEST)
+    render.draw(self.gui_pred)
+    render.draw(self.text_pred)
+    render.disable_state(render.STATE_STENCIL_TEST)
+end
+
+function on_message(self, message_id, message)
+    if message_id == hash("clear_color") then
+        self.clear_color = message.color
+    end
+end
