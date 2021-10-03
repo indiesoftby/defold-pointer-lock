@@ -1,3 +1,5 @@
+[![Pointer Lock Logo](cover.png)](https://github.com/indiesoftby/defold-pointer-lock)
+
 # Pointer Lock for Defold
 
 Pointer Lock lets you access mouse events even when the cursor goes past the boundary of the window or screen. For example, your users can continue to rotate or manipulate a 3D model by moving the mouse without end. Without Pointer Lock, the rotation or manipulation stops the moment the pointer reaches the edge of the window or screen.
