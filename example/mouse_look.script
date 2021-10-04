@@ -17,6 +17,10 @@ local function set_eulers(self)
     go.set(".", "euler.x", s.pitch)
 end
 
+local function update_camera_pos(self)
+    camera3d.view_position = go.get_position() + example_state.eye_pos
+end
+
 function init(self)
     if self.acquire_input_focus then
         msg.post(".", "acquire_input_focus")
@@ -31,6 +35,7 @@ end
 function update(self, dt)
     update_sensitivity(self)
     set_eulers(self)
+    update_camera_pos(self)
 end
 
 function on_message(self, message_id, message, sender)

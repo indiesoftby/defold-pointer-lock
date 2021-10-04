@@ -38,22 +38,51 @@ local function set_alpha(node, alpha, has_outline, has_shadow)
 end
 
 function init(self)
-    msg.post(".", "acquire_input_focus")
+    self.help_lock_mouse = gui.get_node("help_lock_mouse")
+    self.help_unlock_mouse = gui.get_node("help_unlock_mouse")
+    self.help_lock_mouse_alpha = 0
 
-    self.help = gui.get_node("help")
-    self.help_alpha = 0
+    self.help_toggle_cursor = gui.get_node("help_toggle_cursor")
+
+    self.buttons = {}
+    for _, name in pairs({"button1", "button2"}) do
+        local button = {}
+        button.body = gui.get_node(name .. "_body")
+        button.hover = gui.get_node(name .. "_hover")
+        button.click = gui.get_node(name .. "_click")
+
+        table.insert(self.buttons, button)
+    end
 end
 
 function final(self)
 end
 
 function update(self, dt)
-    self.help_alpha = lerp(0.3, self.help_alpha, cursor.pointer_locked and 0 or 1)
-    set_alpha(self.help, self.help_alpha, true, true)
+    self.help_lock_mouse_alpha = lerp(0.3, self.help_lock_mouse_alpha, cursor.pointer_locked and 0 or 1)
+    set_alpha(self.help_lock_mouse, self.help_lock_mouse_alpha, true, true)
+    set_alpha(self.help_unlock_mouse, 1 - self.help_lock_mouse_alpha, true, true)
+
+    set_alpha(self.help_toggle_cursor, 1 - self.help_lock_mouse_alpha / 2, true, true)
+
+    for _, button in pairs(self.buttons) do
+        set_alpha(button.hover, button.hovered and 1 or 0)
+        set_alpha(button.click, button.clicked and 1 or 0)
+    end
 end
 
 function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
+    action_id, action = cursor.transform_input(action_id, action)
+
+    for _, button in pairs(self.buttons) do
+        button.hovered = gui.pick_node(button.body, action.x, action.y)
+        if action_id == hash("touch") and action.pressed then
+            button.clicked = gui.pick_node(button.body, action.x, action.y)
+        elseif action_id == hash("touch") and action.released then
+            button.clicked = false
+        end
+    end
 end

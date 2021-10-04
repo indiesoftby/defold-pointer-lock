@@ -9,7 +9,7 @@ M.cursor_x = M.DISPLAY_WIDTH / 2
 M.cursor_y = M.DISPLAY_HEIGHT / 2
 M.cursor_on = true
 
-function M.transform_action(action_id, action)
+function M.transform_input(action_id, action)
     action.x = M.cursor_x
     action.y = M.cursor_y
 

@@ -20,14 +20,14 @@ M.view_front = vmath.vector3()
 M.view_world_up = vmath.vector3()
 
 function M.reset()
-    M.view_position = vmath.vector3(0, 0, 700)
+    M.view_position = vmath.vector3(0, 0, 0)
     M.view_front = vmath.vector3(0, 0, -1)
     M.view_world_up = vmath.vector3(0, 1, 0)
 end
 
 M.reset()
 
-function M.update_camera(yaw, pitch, view)
+function M.update_camera(yaw, pitch)
     M.view_world_up = vmath.vector3(0, 1, 0)
 
     local front = vmath.vector3()

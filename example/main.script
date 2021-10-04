@@ -1,4 +1,11 @@
+local cursor = require("pointer_lock.cursor")
+
+go.property("acquire_input_focus", true)
+
 function init(self)
+    if self.acquire_input_focus then
+        msg.post(".", "acquire_input_focus")
+    end
 end
 
 function final(self)
@@ -11,6 +18,9 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
+    if action_id == hash("key_space") and action.pressed then
+        cursor.cursor_on = not cursor.cursor_on
+    end
 end
 
 function on_reload(self)
