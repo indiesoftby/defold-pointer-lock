@@ -46,18 +46,20 @@ end
 function on_input(self, action_id, action)
     -- print("on_input", action_id, "pressed", action.pressed, "released", action.released, "dx-dy", action.dx, action.dy, "x-y", action.x, action.y)
 
-    if not html5 and action_id == hash("key_esc") and action.released then
-        local skip_events = cursor.pointer_locked
-        cursor.pointer_locked = false
-        pointer_lock.glfw_mouse_unlock()
+    if not html5 then
+        if action_id == hash("key_esc") and action.released then
+            local skip_events = cursor.pointer_locked
+            cursor.pointer_locked = false
+            pointer_lock.glfw_mouse_unlock()
 
-        return skip_events
-    elseif not html5 and action_id == self.click_action_id and action.released then
-        if not cursor.pointer_locked then
-            cursor.pointer_locked = true
-            pointer_lock.glfw_mouse_lock()
+            return skip_events
+        elseif action_id == self.click_action_id and action.released then
+            if not cursor.pointer_locked then
+                cursor.pointer_locked = true
+                pointer_lock.glfw_mouse_lock()
 
-            return true
+                return true
+            end
         end
     end
 end

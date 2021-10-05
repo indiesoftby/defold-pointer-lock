@@ -13,7 +13,9 @@ var LibraryDefPointerLock = {
             console.log("onPointerLockError", e);
         },
         _onCanvasClick: null,
-        onCanvasClick: function (e) {},
+        onCanvasClick: function (e) {
+            {{{ makeDynCall('vi', 'DefPointerLock._onCanvasClick') }}}();
+        },
     },
 
     DefPointerLock_Init: function (onChange, onClick) {
