@@ -138,7 +138,7 @@ embedded_instances {
 embedded_instances {
   id: "objects"
   children: "compass"
-  children: "compass1"
+  children: "debug"
   data: ""
   position {
     x: 0.0
@@ -198,14 +198,15 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "compass1"
+  id: "debug"
   data: "embedded_components {\n"
-  "  id: \"sprite\"\n"
-  "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/example/assets/example_sprites.atlas\\\"\\n"
-  "default_animation: \\\"compass\\\"\\n"
-  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
-  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "  id: \"mesh\"\n"
+  "  type: \"mesh\"\n"
+  "  data: \"material: \\\"/example/assets/materials/mesh_color_dirlight.material\\\"\\n"
+  "vertices: \\\"/example/assets/objects/debug_sphere.buffer\\\"\\n"
+  "primitive_type: PRIMITIVE_TRIANGLES\\n"
+  "position_stream: \\\"position\\\"\\n"
+  "normal_stream: \\\"normal\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -214,16 +215,16 @@ embedded_instances {
   "  }\n"
   "  rotation {\n"
   "    x: 0.0\n"
-  "    y: 1.0\n"
+  "    y: 0.0\n"
   "    z: 0.0\n"
-  "    w: 6.123234E-17\n"
+  "    w: 1.0\n"
   "  }\n"
   "}\n"
   ""
   position {
     x: 0.0
-    y: 0.0
-    z: -706.0
+    y: 98.0
+    z: -836.0
   }
   rotation {
     x: 0.0

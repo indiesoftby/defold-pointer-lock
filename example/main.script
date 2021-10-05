@@ -6,6 +6,8 @@ function init(self)
     if self.acquire_input_focus then
         msg.post(".", "acquire_input_focus")
     end
+
+    cursor.cursor_on = false
 end
 
 function final(self)
