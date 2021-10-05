@@ -45,7 +45,7 @@ function init(self)
     self.help_toggle_cursor = gui.get_node("help_toggle_cursor")
 
     self.buttons = {}
-    for _, name in pairs({"button1", "button2"}) do
+    for _, name in pairs({"button1", "button2", "button3", "button4"}) do
         local button = {}
         button.body = gui.get_node(name .. "_body")
         button.hover = gui.get_node(name .. "_hover")

@@ -6,7 +6,7 @@ M.display_height = tonumber(sys.get_config("display.height"))
 M.aspect_ratio = M.display_width/M.display_height
 M.FOV = 42.5
 M.NEAR = 1
-M.FAR = 10000
+M.FAR = 5000
 
 -- Helpers
 local IDENTITY_MAT4 = vmath.matrix4()
