@@ -22,6 +22,10 @@ end
 function on_input(self, action_id, action)
     if action_id == hash("key_space") and action.pressed then
         cursor.cursor_on = not cursor.cursor_on
+    elseif action_id == hash("key_f1") and action.pressed then
+        msg.post("@system:", "toggle_physics_debug")
+    elseif action_id == hash("key_f2") and action.pressed then
+        msg.post("@system:", "toggle_profile")
     end
 end
 
