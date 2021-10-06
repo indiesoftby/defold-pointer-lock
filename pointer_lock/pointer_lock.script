@@ -2,6 +2,7 @@ local cursor = require("pointer_lock.cursor")
 
 go.property("acquire_input_focus", true)
 go.property("click_action_id", hash("touch"))
+go.property("unlock_action_id", hash("key_esc"))
 
 function init(self)
     if self.acquire_input_focus then
@@ -53,10 +54,14 @@ function on_input(self, action_id, action)
         --     print("html5_pointer_locked changed (input): ", locked)
         -- end
         cursor.pointer_locked = locked
-    end
 
-    if not html5 then
-        if action_id == hash("key_esc") and action.released then
+        if cursor.pointer_locked and action_id == self.unlock_action_id and action.released then
+            pointer_lock.html5_exit_pointer_lock()
+
+            return true
+        end
+    else
+        if action_id == self.unlock_action_id and action.released then
             local skip_events = cursor.pointer_locked
             cursor.pointer_locked = false
             pointer_lock.glfw_mouse_unlock()
