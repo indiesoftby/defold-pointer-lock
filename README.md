@@ -18,7 +18,7 @@ If you want to make a first-person 3D game (DOOM-like, Quake-like etc.) with Def
 | -------- | ------ | ------------ |
 | Browser (HTML5) | Supported ✅ (Desktop-only!) | The cursor isn't placed in the center of the view when it's locked. The cursor is automatically reset when escape is pressed. |
 | macOS | Supported ✅ | |
-| Linux | Not Tested ℹ️ | |
+| Linux | Supported ✅ | |
 | Windows | Supported ✅ | When the system cursor is locked (`pointer.locked` is `true`), the cursor is placed in the center of the view and cannot be moved. The cursor is invisible in this state. |
 
 ## Installation & Usage
