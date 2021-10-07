@@ -2,10 +2,9 @@
 
 # Pointer Lock for Defold
 
+Pointer Lock is intended to simplify mouse locking to access mouse events even when the cursor goes past the boundary of the window or screen. For example, a user can continue to rotate or manipulate a 3D model by moving the mouse without end. Without mouse locking, the rotation or manipulation stops the moment the pointer reaches the edge of the window or screen.
 
-If you want to make a first-person 3D game with Defold, then you need this extension.
-
-Pointer Lock is intended to simplify mouse locking to access mouse events even when the cursor goes past the boundary of the window or screen. For example, a user can continue to rotate or manipulate a 3D model by moving the mouse without end. Without Pointer Lock, the rotation or manipulation stops the moment the pointer reaches the edge of the window or screen.
+If you want to make a first-person 3D game (DOOM-like, Quake-like etc.) with Defold, then you need this extension.
 
 ## Demo
 
