@@ -1,4 +1,4 @@
-local cursor = require("pointer_lock.cursor")
+local pointer = require("pointer_lock.pointer")
 
 go.property("acquire_input_focus", true)
 
@@ -7,7 +7,7 @@ function init(self)
         msg.post(".", "acquire_input_focus")
     end
 
-    cursor.cursor_on = false
+    pointer.cursor_visible = false
 end
 
 function final(self)
@@ -21,7 +21,7 @@ end
 
 function on_input(self, action_id, action)
     if action_id == hash("key_space") and action.pressed then
-        cursor.cursor_on = not cursor.cursor_on
+        pointer.cursor_visible = not pointer.cursor_visible
     elseif action_id == hash("key_f1") and action.pressed then
         msg.post("@system:", "toggle_physics_debug")
     elseif action_id == hash("key_f2") and action.pressed then

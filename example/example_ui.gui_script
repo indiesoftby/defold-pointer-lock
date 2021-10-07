@@ -1,4 +1,4 @@
-local cursor = require("pointer_lock.cursor")
+local pointer = require("pointer_lock.pointer")
 
 local function clamp01(value)
     if value < 0 then
@@ -59,7 +59,7 @@ function final(self)
 end
 
 function update(self, dt)
-    self.help_lock_mouse_alpha = lerp(0.3, self.help_lock_mouse_alpha, cursor.pointer_locked and 0 or 1)
+    self.help_lock_mouse_alpha = lerp(0.3, self.help_lock_mouse_alpha, pointer.locked and 0 or 1)
     set_alpha(self.help_lock_mouse, self.help_lock_mouse_alpha, true, true)
     set_alpha(self.help_unlock_mouse, 1 - self.help_lock_mouse_alpha, true, true)
 
@@ -75,7 +75,7 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-    action_id, action = cursor.transform_input(action_id, action)
+    action_id, action = pointer.transform_input(action_id, action)
 
     for _, button in pairs(self.buttons) do
         button.hovered = gui.pick_node(button.body, action.x, action.y)

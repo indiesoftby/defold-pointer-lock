@@ -1,4 +1,4 @@
-local cursor = require("pointer_lock.cursor")
+local pointer = require("pointer_lock.pointer")
 
 go.property("acquire_input_focus", true)
 go.property("click_action_id", hash("touch"))
@@ -9,37 +9,37 @@ function init(self)
         msg.post(".", "acquire_input_focus")
     end
 
-    cursor.pointer_locked = false
-    pointer_lock.glfw_mouse_unlock()
+    pointer.locked = false
+    pointer_lock_ext.glfw_mouse_unlock()
 
     if html5 then
-        pointer_lock.html5_on_click(function()
+        pointer_lock_ext.html5_on_click(function()
             -- DEBUG
             -- print("html5_on_click")
-            if not cursor.pointer_locked then
-                pointer_lock.html5_request_pointer_lock()
+            if not pointer.locked then
+                pointer_lock_ext.html5_request_pointer_lock()
             end
         end)
     end
 end
 
 function final(self)
-    cursor.pointer_locked = false
-    pointer_lock.glfw_mouse_unlock()
+    pointer.locked = false
+    pointer_lock_ext.glfw_mouse_unlock()
 
     if html5 then
-        pointer_lock.html5_on_click(nil)
+        pointer_lock_ext.html5_on_click(nil)
     end
 end
 
 function update(self, dt)
     if html5 then
-        local locked = pointer_lock.html5_pointer_locked()
+        local locked = pointer_lock_ext.html5_pointer_locked()
         -- DEBUG
-        -- if locked ~= cursor.pointer_locked then
+        -- if locked ~= pointer.locked then
         --     print("html5_pointer_locked changed (update): ", locked)
         -- end
-        cursor.pointer_locked = locked
+        pointer.locked = locked
     end
 end
 
@@ -48,29 +48,29 @@ end
 
 function on_input(self, action_id, action)
     if html5 then
-        local locked = pointer_lock.html5_pointer_locked()
+        local locked = pointer_lock_ext.html5_pointer_locked()
         -- DEBUG
-        -- if locked ~= cursor.pointer_locked then
+        -- if locked ~= pointer.locked then
         --     print("html5_pointer_locked changed (input): ", locked)
         -- end
-        cursor.pointer_locked = locked
+        pointer.locked = locked
 
-        if cursor.pointer_locked and action_id == self.unlock_action_id and action.released then
-            pointer_lock.html5_exit_pointer_lock()
+        if pointer.locked and action_id == self.unlock_action_id and action.released then
+            pointer_lock_ext.html5_exit_pointer_lock()
 
             return true
         end
     else
         if action_id == self.unlock_action_id and action.released then
-            local skip_events = cursor.pointer_locked
-            cursor.pointer_locked = false
-            pointer_lock.glfw_mouse_unlock()
+            local skip_events = pointer.locked
+            pointer.locked = false
+            pointer_lock_ext.glfw_mouse_unlock()
 
             return skip_events
         elseif action_id == self.click_action_id and action.released then
-            if not cursor.pointer_locked then
-                cursor.pointer_locked = true
-                pointer_lock.glfw_mouse_lock()
+            if not pointer.locked then
+                pointer.locked = true
+                pointer_lock_ext.glfw_mouse_lock()
 
                 return true
             end

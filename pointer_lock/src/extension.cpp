@@ -112,7 +112,7 @@ static void LuaInit(lua_State* L)
     int top = lua_gettop(L);
 
     // Register lua names
-    luaL_register(L, "pointer_lock", Module_methods);
+    luaL_register(L, "pointer_lock_ext", Module_methods);
 
     lua_pop(L, 1);
     assert(top == lua_gettop(L));

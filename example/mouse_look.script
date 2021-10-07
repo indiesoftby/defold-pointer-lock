@@ -1,6 +1,6 @@
 local example_state = require("example.example_state")
 local camera3d = require("example.render.camera3d")
-local cursor = require("pointer_lock.cursor")
+local pointer = require("pointer_lock.pointer")
 
 go.property("acquire_input_focus", true)
 
@@ -38,7 +38,7 @@ function update(self, dt)
     update_camera_pos(self)
 
     -- It's used to avoid high values for action.dx/dy (for HTML5 only)
-    self.pointer_locked = cursor.pointer_locked
+    self.pointer_locked = pointer.locked
 end
 
 function on_message(self, message_id, message, sender)
@@ -46,7 +46,7 @@ end
 
 function on_input(self, action_id, action)
     if action_id == nil then
-        if self.pointer_locked and cursor.pointer_locked and not cursor.cursor_on then
+        if self.pointer_locked and pointer.locked and not pointer.cursor_visible then
             local s = example_state
             s.yaw = s.yaw - (self.look_speed * -action.dx)
             s.pitch = s.pitch - (self.look_speed * -action.dy)

@@ -1,4 +1,4 @@
-local cursor = require("pointer_lock.cursor")
+local pointer = require("pointer_lock.pointer")
 
 local function clamp(value, min, max)
     if value < min then
@@ -31,9 +31,9 @@ function final(self)
 end
 
 function update(self, dt)
-    gui.set_position(self.cursor_node, vmath.vector3(cursor.cursor_x, cursor.cursor_y, 0))
+    gui.set_position(self.cursor_node, vmath.vector3(pointer.cursor_x, pointer.cursor_y, 0))
 
-    local cursor_alpha = (cursor.cursor_on and 1 or 0) * (cursor.pointer_locked and 1 or 0.5)
+    local cursor_alpha = (pointer.cursor_visible and 1 or 0) * (pointer.locked and 1 or 0.5)
     set_alpha(self.cursor_node, cursor_alpha)
 end
 
@@ -49,15 +49,15 @@ function on_input(self, action_id, action)
     -- NOTE: input should be acquired by the developer
 
     if action_id == nil then
-        if cursor.pointer_locked and cursor.cursor_on then
-            local x = cursor.cursor_x
-            local y = cursor.cursor_y
+        if pointer.locked and pointer.cursor_visible then
+            local x = pointer.cursor_x
+            local y = pointer.cursor_y
 
-            x = clamp(x + action.dx, 0, cursor.DISPLAY_WIDTH)
-            y = clamp(y + action.dy, 0, cursor.DISPLAY_HEIGHT)
+            x = clamp(x + action.dx, 0, pointer.DISPLAY_WIDTH)
+            y = clamp(y + action.dy, 0, pointer.DISPLAY_HEIGHT)
 
-            cursor.cursor_x = x
-            cursor.cursor_y = y
+            pointer.cursor_x = x
+            pointer.cursor_y = y
         end
     end
 end
