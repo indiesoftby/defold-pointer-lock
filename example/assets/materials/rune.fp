@@ -14,9 +14,9 @@ void main()
     vec3 color = var_color.rgb * tint_pm.rgb;
 
     // Directional light
-    float ambient_strength = ambient_color.w + 0.5;
+    float ambient_strength = ambient_color.w;
     vec3 ambient = ambient_strength * ambient_color.rgb;
-    float diff_light = max(dot(var_normal, normalize(-light_direction.xyz)), 0.0) * 0.001;
+    float diff_light = max(dot(var_normal, normalize(-light_direction.xyz)), 0.0) * (1.0 - ambient_strength);
 
     // Final composition
     float gamma = 2.2;

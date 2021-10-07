@@ -60,7 +60,7 @@ vertex_constants {
     x: 1.0
     y: 1.0
     z: 1.0
-    w: 0.5
+    w: 0.2
   }
 }
 fragment_constants {

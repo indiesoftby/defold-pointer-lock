@@ -2,9 +2,10 @@
 
 # Pointer Lock for Defold
 
+
 If you want to make a first-person 3D game with Defold, then you need this extension.
 
-Pointer Lock simplifies mouse locking to access mouse events even when the cursor goes past the boundary of the window or screen. For example, your users can continue to rotate or manipulate a 3D model by moving the mouse without end. Without Pointer Lock, the rotation or manipulation stops the moment the pointer reaches the edge of the window or screen.
+Pointer Lock is intended to simplify mouse locking to access mouse events even when the cursor goes past the boundary of the window or screen. For example, a user can continue to rotate or manipulate a 3D model by moving the mouse without end. Without Pointer Lock, the rotation or manipulation stops the moment the pointer reaches the edge of the window or screen.
 
 ## Demo
 
@@ -42,8 +43,12 @@ Pass `on_input` arguments to the `pointer.transform_input` function to convert i
 ```lua
 function on_input(self, action_id, action)
     action_id, action = pointer.transform_input(action_id, action)
+
+    -- ...process the input as usual
 end
 ```
+
+The `pointer_lock/cursor_ui.gui` GUI is an example of how to implement a custom virtual in-game cursor.
 
 ## License
 
