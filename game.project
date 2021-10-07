@@ -36,3 +36,6 @@ scale_mode = stretch
 [input]
 game_binding = /builtins/input/all.input_bindingc
 
+[library]
+include_dirs = pointer_lock
+
