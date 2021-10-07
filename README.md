@@ -4,7 +4,7 @@
 
 Pointer Lock is intended to simplify mouse locking to access mouse events even when the cursor goes past the boundary of the window or screen. For example, a user can continue to rotate or manipulate a 3D model by moving the mouse without end. Without mouse locking, the rotation or manipulation stops the moment the pointer reaches the edge of the window or screen.
 
-If you want to make a first-person 3D game (DOOM-like, Quake-like etc.) with Defold, then you need this extension.
+If you want to make a first-person 3D game (DOOM-like, Quake-like etc.) with Defold, you need this extension.
 
 ## Demo
 
@@ -17,7 +17,7 @@ If you want to make a first-person 3D game (DOOM-like, Quake-like etc.) with Def
 | Platform | Status | Known Things |
 | -------- | ------ | ------------ |
 | Browser (HTML5) | Supported ✅ (Desktop-only!) | The cursor isn't placed in the center of the view when it's locked. The cursor is automatically reset when escape is pressed. |
-| macOS | Not Tested ℹ️ | |
+| macOS | Supported ✅ | |
 | Linux | Not Tested ℹ️ | |
 | Windows | Supported ✅ | When the system cursor is locked (`pointer.locked` is `true`), the cursor is placed in the center of the view and cannot be moved. The cursor is invisible in this state. |
 
