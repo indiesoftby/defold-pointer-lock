@@ -255,7 +255,7 @@ nodes {
 }
 nodes {
   position {
-    x: 41.0
+    x: 1019.0
     y: 41.0
     z: 0.0
     w: 1.0
@@ -273,8 +273,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -327,8 +327,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -382,8 +382,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -419,70 +419,7 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.4
-    y: 1.4
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 50.0
-    y: 50.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "1"
-  font: "example"
-  id: "button1_caption"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  shadow {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "button1_body"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 1237.0
+    x: 1092.0
     y: 41.0
     z: 0.0
     w: 1.0
@@ -500,8 +437,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -554,8 +491,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -609,8 +546,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -646,71 +583,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.4
-    y: 1.4
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 50.0
-    y: 50.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "2"
-  font: "example"
-  id: "button2_caption"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  shadow {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "button2_body"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 1237.0
-    y: 676.0
+    x: 1165.0
+    y: 41.0
     z: 0.0
     w: 1.0
   }
@@ -727,8 +601,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -781,8 +655,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -836,8 +710,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -873,71 +747,8 @@ nodes {
 }
 nodes {
   position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.4
-    y: 1.4
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 50.0
-    y: 50.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "3"
-  font: "example"
-  id: "button3_caption"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  shadow {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "button3_body"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
-}
-nodes {
-  position {
-    x: 41.0
-    y: 676.0
+    x: 1238.0
+    y: 41.0
     z: 0.0
     w: 1.0
   }
@@ -954,8 +765,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -1008,8 +819,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -1063,8 +874,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 118.0
-    y: 118.0
+    x: 124.0
+    y: 124.0
     z: 0.0
     w: 1.0
   }
@@ -1097,69 +908,6 @@ nodes {
   alpha: 0.0
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale {
-    x: 1.4
-    y: 1.4
-    z: 1.0
-    w: 1.0
-  }
-  size {
-    x: 50.0
-    y: 50.0
-    z: 0.0
-    w: 1.0
-  }
-  color {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-    w: 1.0
-  }
-  type: TYPE_TEXT
-  blend_mode: BLEND_MODE_ALPHA
-  text: "4"
-  font: "example"
-  id: "button4_caption"
-  xanchor: XANCHOR_NONE
-  yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
-  outline {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  shadow {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  adjust_mode: ADJUST_MODE_FIT
-  line_break: false
-  parent: "button4_body"
-  layer: ""
-  inherit_alpha: true
-  alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
-  template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

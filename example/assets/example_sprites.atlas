@@ -1,5 +1,5 @@
 images {
-  image: "/example/assets/images/compass.png"
+  image: "/example/assets/images/shadow.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0

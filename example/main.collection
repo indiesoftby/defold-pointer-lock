@@ -137,7 +137,6 @@ embedded_instances {
 }
 embedded_instances {
   id: "objects"
-  children: "compass"
   children: "rune_parent1"
   children: "rune_parent2"
   children: "rune_parent3"
@@ -147,46 +146,6 @@ embedded_instances {
   children: "rune_parent7"
   children: "rune_parent8"
   data: ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "compass"
-  data: "embedded_components {\n"
-  "  id: \"sprite\"\n"
-  "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/example/assets/example_sprites.atlas\\\"\\n"
-  "default_animation: \\\"compass\\\"\\n"
-  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
-  "blend_mode: BLEND_MODE_ALPHA\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: -0.70710677\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 0.70710677\n"
-  "  }\n"
-  "}\n"
-  ""
   position {
     x: 0.0
     y: 0.0
@@ -245,7 +204,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"mesh\"\n"
   "  type: \"mesh\"\n"
-  "  data: \"material: \\\"/example/assets/materials/mesh_color_dirlight.material\\\"\\n"
+  "  data: \"material: \\\"/example/assets/materials/rune.material\\\"\\n"
   "vertices: \\\"/example/assets/objects/rune_1.buffer\\\"\\n"
   "primitive_type: PRIMITIVE_TRIANGLES\\n"
   "position_stream: \\\"position\\\"\\n"
@@ -253,7 +212,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 170.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -263,10 +222,30 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"shadow\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/example/assets/example_sprites.atlas\\\"\\n"
+  "default_animation: \\\"shadow\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: -0.70710677\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
   ""
   position {
     x: 0.0
-    y: 170.0
+    y: 0.0
     z: -735.0
   }
   rotation {
@@ -322,7 +301,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"mesh\"\n"
   "  type: \"mesh\"\n"
-  "  data: \"material: \\\"/example/assets/materials/mesh_color_dirlight.material\\\"\\n"
+  "  data: \"material: \\\"/example/assets/materials/rune.material\\\"\\n"
   "vertices: \\\"/example/assets/objects/rune_2.buffer\\\"\\n"
   "primitive_type: PRIMITIVE_TRIANGLES\\n"
   "position_stream: \\\"position\\\"\\n"
@@ -330,7 +309,7 @@ embedded_instances {
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 170.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -340,10 +319,30 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"shadow\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/example/assets/example_sprites.atlas\\\"\\n"
+  "default_animation: \\\"shadow\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: -0.70710677\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
   ""
   position {
     x: 0.0
-    y: 170.0
+    y: 0.0
     z: -735.0
   }
   rotation {
@@ -399,15 +398,15 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"mesh\"\n"
   "  type: \"mesh\"\n"
-  "  data: \"material: \\\"/example/assets/materials/mesh_color_dirlight.material\\\"\\n"
-  "vertices: \\\"/example/assets/objects/rune_1.buffer\\\"\\n"
+  "  data: \"material: \\\"/example/assets/materials/rune.material\\\"\\n"
+  "vertices: \\\"/example/assets/objects/rune_3.buffer\\\"\\n"
   "primitive_type: PRIMITIVE_TRIANGLES\\n"
   "position_stream: \\\"position\\\"\\n"
   "normal_stream: \\\"normal\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 170.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -417,10 +416,30 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"shadow\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/example/assets/example_sprites.atlas\\\"\\n"
+  "default_animation: \\\"shadow\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: -0.70710677\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
   ""
   position {
     x: 0.0
-    y: 170.0
+    y: 0.0
     z: -735.0
   }
   rotation {
@@ -476,15 +495,15 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"mesh\"\n"
   "  type: \"mesh\"\n"
-  "  data: \"material: \\\"/example/assets/materials/mesh_color_dirlight.material\\\"\\n"
-  "vertices: \\\"/example/assets/objects/rune_1.buffer\\\"\\n"
+  "  data: \"material: \\\"/example/assets/materials/rune.material\\\"\\n"
+  "vertices: \\\"/example/assets/objects/rune_4.buffer\\\"\\n"
   "primitive_type: PRIMITIVE_TRIANGLES\\n"
   "position_stream: \\\"position\\\"\\n"
   "normal_stream: \\\"normal\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 170.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -494,10 +513,30 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"shadow\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/example/assets/example_sprites.atlas\\\"\\n"
+  "default_animation: \\\"shadow\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: -0.70710677\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
   ""
   position {
     x: 0.0
-    y: 170.0
+    y: 0.0
     z: -735.0
   }
   rotation {
@@ -553,15 +592,15 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"mesh\"\n"
   "  type: \"mesh\"\n"
-  "  data: \"material: \\\"/example/assets/materials/mesh_color_dirlight.material\\\"\\n"
-  "vertices: \\\"/example/assets/objects/rune_1.buffer\\\"\\n"
+  "  data: \"material: \\\"/example/assets/materials/rune.material\\\"\\n"
+  "vertices: \\\"/example/assets/objects/rune_5.buffer\\\"\\n"
   "primitive_type: PRIMITIVE_TRIANGLES\\n"
   "position_stream: \\\"position\\\"\\n"
   "normal_stream: \\\"normal\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 170.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -571,10 +610,30 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"shadow\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/example/assets/example_sprites.atlas\\\"\\n"
+  "default_animation: \\\"shadow\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: -0.70710677\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
   ""
   position {
     x: 0.0
-    y: 170.0
+    y: 0.0
     z: -735.0
   }
   rotation {
@@ -630,15 +689,15 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"mesh\"\n"
   "  type: \"mesh\"\n"
-  "  data: \"material: \\\"/example/assets/materials/mesh_color_dirlight.material\\\"\\n"
-  "vertices: \\\"/example/assets/objects/rune_1.buffer\\\"\\n"
+  "  data: \"material: \\\"/example/assets/materials/rune.material\\\"\\n"
+  "vertices: \\\"/example/assets/objects/rune_6.buffer\\\"\\n"
   "primitive_type: PRIMITIVE_TRIANGLES\\n"
   "position_stream: \\\"position\\\"\\n"
   "normal_stream: \\\"normal\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 170.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -648,10 +707,30 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"shadow\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/example/assets/example_sprites.atlas\\\"\\n"
+  "default_animation: \\\"shadow\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: -0.70710677\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
   ""
   position {
     x: 0.0
-    y: 170.0
+    y: 0.0
     z: -735.0
   }
   rotation {
@@ -707,15 +786,15 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"mesh\"\n"
   "  type: \"mesh\"\n"
-  "  data: \"material: \\\"/example/assets/materials/mesh_color_dirlight.material\\\"\\n"
-  "vertices: \\\"/example/assets/objects/rune_1.buffer\\\"\\n"
+  "  data: \"material: \\\"/example/assets/materials/rune.material\\\"\\n"
+  "vertices: \\\"/example/assets/objects/rune_7.buffer\\\"\\n"
   "primitive_type: PRIMITIVE_TRIANGLES\\n"
   "position_stream: \\\"position\\\"\\n"
   "normal_stream: \\\"normal\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 170.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -725,10 +804,30 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"shadow\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/example/assets/example_sprites.atlas\\\"\\n"
+  "default_animation: \\\"shadow\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: -0.70710677\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
   ""
   position {
     x: 0.0
-    y: 170.0
+    y: 0.0
     z: -735.0
   }
   rotation {
@@ -784,15 +883,15 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"mesh\"\n"
   "  type: \"mesh\"\n"
-  "  data: \"material: \\\"/example/assets/materials/mesh_color_dirlight.material\\\"\\n"
-  "vertices: \\\"/example/assets/objects/rune_1.buffer\\\"\\n"
+  "  data: \"material: \\\"/example/assets/materials/rune.material\\\"\\n"
+  "vertices: \\\"/example/assets/objects/rune_8.buffer\\\"\\n"
   "primitive_type: PRIMITIVE_TRIANGLES\\n"
   "position_stream: \\\"position\\\"\\n"
   "normal_stream: \\\"normal\\\"\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
-  "    y: 0.0\n"
+  "    y: 170.0\n"
   "    z: 0.0\n"
   "  }\n"
   "  rotation {\n"
@@ -802,10 +901,30 @@ embedded_instances {
   "    w: 1.0\n"
   "  }\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"shadow\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"tile_set: \\\"/example/assets/example_sprites.atlas\\\"\\n"
+  "default_animation: \\\"shadow\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "blend_mode: BLEND_MODE_ALPHA\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: -0.70710677\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 0.70710677\n"
+  "  }\n"
+  "}\n"
   ""
   position {
     x: 0.0
-    y: 170.0
+    y: 0.0
     z: -735.0
   }
   rotation {

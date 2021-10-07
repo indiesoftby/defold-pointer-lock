@@ -18,7 +18,6 @@ void main()
     vec4 p = mtx_worldview * vec4(position.xyz, 1.0);
     var_position = p;
     var_normal = normalize(transpose(inverse(mat3(mtx_world))) * (normal.xyz / 127.0));
-    var_unlit = 0.0;//normal.w / 127.0;
     var_color = color / vec4(255.0, 255.0, 255.0, 127.5);
     gl_Position = mtx_proj * p;
 }

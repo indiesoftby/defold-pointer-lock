@@ -51,4 +51,4 @@ end
 
 MIT.
 
-The asset cover uses [an image by Rostislav Uzunov](https://www.pexels.com/photo/purple-and-pink-diamond-on-blue-background-5011647/). Compass rose is generated with [Compass Rose Generator](https://watabou.itch.io/compass-rose-generator).
+The asset cover uses [an image by Rostislav Uzunov](https://www.pexels.com/photo/purple-and-pink-diamond-on-blue-background-5011647/).
