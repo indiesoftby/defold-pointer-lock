@@ -8,7 +8,7 @@ If you want to make a first-person 3D game (DOOM-like, Quake-like etc.) with Def
 
 ## Demo
 
-**[Check out the web demo](https://indiesoftby.github.io/defold-pointer-lock/)** to test Pointer Lock on your desktop and fly through the included 3D scene.
+**[Check out the web demo](https://indiesoftby.github.io/defold-pointer-lock/)** to test Pointer Lock on your desktop PC.
 
 ## Supported Platforms
 
