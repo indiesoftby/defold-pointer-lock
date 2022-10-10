@@ -28,6 +28,3 @@ function on_input(self, action_id, action)
         msg.post("@system:", "toggle_profile")
     end
 end
-
-function on_reload(self)
-end
