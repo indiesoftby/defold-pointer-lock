@@ -90,6 +90,7 @@ subpixels = 1
 
 [model]
 max_count = 128
+split_meshes = 0
 
 [mesh]
 max_count = 128
