@@ -14,18 +14,6 @@ local function lock_mouse_on_interaction(self)
     end
 end
 
---- HTML5 only.
-local function check_lock_status(self)
-    local locked = window.get_mouse_lock()
-    if locked ~= pointer.locked then
-        -- DEBUG
-        -- print("pointer.locked changed: ", locked)
-
-        -- do something?...
-    end
-    pointer.locked = locked
-end
-
 function init(self)
     if self.acquire_input_focus then
         msg.post(".", "acquire_input_focus")
@@ -46,12 +34,9 @@ end
 
 function update(self, dt)
     if html5 then
-        --
-        -- HTML5 only
-        --
         -- If user presses "esc" to exit pointer lock then web browsers don't fire "input" event.
         -- That's why we have to check the pointer lock status in the update loop.
-        check_lock_status(self)
+        pointer.update_lock_state()
     end
 end
 
@@ -63,7 +48,7 @@ function on_input(self, action_id, action)
         --
         -- HTML5
         --
-        check_lock_status(self)
+        pointer.update_lock_state()
 
         if pointer.locked and action_id == self.unlock_action_id and action.released then
             window.set_mouse_lock(false)
@@ -74,6 +59,7 @@ function on_input(self, action_id, action)
         --
         -- Desktop
         --
+
         if action_id == self.unlock_action_id and action.released then
             local skip_events = pointer.locked
             pointer.locked = false
