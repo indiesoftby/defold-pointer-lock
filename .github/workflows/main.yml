@@ -32,10 +32,10 @@ jobs:
           if [ "${BOB_LOCAL_SHA1}" != "${BOB_SHA1}" ]; then wget --progress=dot:mega -O build/bundle/bob.jar "https://d.defold.com/archive/${BOB_SHA1}/bob/bob.jar"; fi
           java -jar build/bundle/bob.jar --version
 
-          java -jar build/bundle/bob.jar --email a@b.com --auth 123 --texture-compression true --bundle-output build/bundle/wasm-web --platform wasm-web --archive --variant release resolve build bundle
+          java -jar build/bundle/bob.jar --email a@b.com --auth 123 --texture-compression true --bundle-output bundle/wasm-web --platform wasm-web --archive --variant release resolve build bundle
 
       - name: Deploy to Pages 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
-          folder: build/bundle/wasm-web/pointer_lock_example
+          folder: bundle/wasm-web/pointer_lock_example
