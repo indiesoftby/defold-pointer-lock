@@ -4,7 +4,7 @@
 
 > 💡 Prior to Defold 1.3.7, this extension had C API to lock/unlock mouse cursor. After the release of Defold 1.3.7, the C API was cut and since then the extension has been the demo project of how to implement mouse lock in your Defold game.
 >
-> In Defold 1.13.0 there were breaking changes in rendering scripts.
+> Defold 1.13.0 introduced breaking changes to render scripts.
 >
 > So, this version of Pointer Lock requires **Defold 1.13.0 or newer**.
 
