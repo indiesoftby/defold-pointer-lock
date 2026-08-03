@@ -4,7 +4,9 @@
 
 > 💡 Prior to Defold 1.3.7, this extension had C API to lock/unlock mouse cursor. After the release of Defold 1.3.7, the C API was cut and since then the extension has been the demo project of how to implement mouse lock in your Defold game.
 >
-> So, this version of Pointer Lock requires **Defold 1.3.7 or newer**.
+> In Defold 1.13.0 there were breaking changes.
+>
+> So, this version of Pointer Lock requires **Defold 1.13.0 or newer**.
 
 Pointer Lock is intended to simplify mouse locking to access mouse events even when the cursor goes past the boundary of the window or screen. For example, a user can continue to rotate or manipulate a 3D model by moving the mouse without end. Without mouse locking, the rotation or manipulation stops the moment the pointer reaches the edge of the window or screen.
 
