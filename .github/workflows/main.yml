@@ -35,7 +35,7 @@ jobs:
           java -jar build/bundle/bob.jar --email a@b.com --auth 123 --texture-compression true --bundle-output bundle/wasm-web --platform wasm-web --archive --variant release resolve build bundle
 
       - name: Deploy to Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+        uses: JamesIves/github-pages-deploy-action@4.8.0
         with:
           branch: gh-pages
           folder: bundle/wasm-web/pointer_lock_example
