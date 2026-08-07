@@ -2,6 +2,7 @@ name: Build example
 
 on:
   workflow_dispatch:
+  pull_request:
   push:
     branches:
       - main
@@ -25,12 +26,12 @@ jobs:
         run: |
           lsb_release -a
 
-          mkdir -p build/bundle
+          mkdir -p bundle
 
           BOB_SHA1=${DEFOLD_BOB_SHA1:-$(curl -s 'https://d.defold.com/stable/info.json' | jq -r .sha1)}
-          BOB_LOCAL_SHA1=$((java -jar build/bundle/bob.jar --version | cut -d' ' -f6) || true)
-          if [ "${BOB_LOCAL_SHA1}" != "${BOB_SHA1}" ]; then wget --progress=dot:mega -O build/bundle/bob.jar "https://d.defold.com/archive/${BOB_SHA1}/bob/bob.jar"; fi
-          java -jar build/bundle/bob.jar --version
+          BOB_LOCAL_SHA1=$((java -jar bundle/bob.jar --version | cut -d' ' -f6) || true)
+          if [ "${BOB_LOCAL_SHA1}" != "${BOB_SHA1}" ]; then wget --progress=dot:mega -O bundle/bob.jar "https://d.defold.com/archive/${BOB_SHA1}/bob/bob.jar"; fi
+          java -jar bundle/bob.jar --version
 
           java -jar build/bundle/bob.jar --email a@b.com --auth 123 --texture-compression true --bundle-output bundle/wasm-web --platform wasm-web --archive --variant release resolve build bundle
 
@@ -39,3 +40,4 @@ jobs:
         with:
           branch: gh-pages
           folder: bundle/wasm-web/pointer_lock_example
+        if: github.ref == 'refs/heads/main'
